@@ -13,9 +13,16 @@ const EmployeesList = ({data, onDelete, onToggleProp, onSalaryChange}) => {
                 onDelete={() => onDelete(id)}
                 onToggleProp={(e) => onToggleProp(id, e.currentTarget.getAttribute('data-toggle'))}
                 onSalaryChange={(e) => {
-                    const summ = +(e.currentTarget.value).replace(/\D/g, '');
+                    const target = e.currentTarget;
+                    const summ = +(target.value).replace(/\D/g, '');
+                    
                     onSalaryChange(id, summ);
-                    e.currentTarget.value = summ + '$';
+                    target.value = summ + '$';
+
+                    const length = target.value.length;
+                    if (target.selectionStart === length) {
+                        target.setSelectionRange(length - 1, length - 1);
+                    }
                 }}/>
         )
     });

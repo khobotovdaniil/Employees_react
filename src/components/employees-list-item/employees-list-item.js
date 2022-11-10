@@ -23,7 +23,7 @@ const EmployeesListItem = (props) => {
             </span>
             <input type="text"
                    className="list-group-item-input"
-                   Value={salary + '$'}
+                   value={salary + '$'}
                    onChange={onSalaryChange}/>
             <div className="d-flex fustify-content-center align-items-center">
                 <button type="button"
