@@ -1,8 +1,8 @@
-import '../employees-list-item/employees-list-item.css';
+import './employees-list-item.css';
 
 const EmployeesListItem = (props) => {
 
-    const {name, salary, onDelete, onToggleProp, increase, rise} = props;  
+    const {name, salary, onDelete, onToggleProp, increase, rise, onSalaryChange} = props;  
 
     let classNames = "list-group-item d-flex jusfify-content-between";
     
@@ -23,7 +23,8 @@ const EmployeesListItem = (props) => {
             </span>
             <input type="text"
                    className="list-group-item-input"
-                   defaultValue={salary + '$'}/>
+                   Value={salary + '$'}
+                   onChange={onSalaryChange}/>
             <div className="d-flex fustify-content-center align-items-center">
                 <button type="button"
                         className="btn-cookie btn-sm"
